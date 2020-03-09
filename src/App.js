@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ToDoForm from './components/TodoForm'
+import ToDoList from './components/TodoList'
 
 const tasks = [{
   item: '',
@@ -17,16 +18,41 @@ class App extends React.Component {
       tasks: tasks
     }
   }
+
   addTask = task => {
     this.setState({
       tasks: [...this.state.tasks, task]
     })
   }
+
+  markCompleted = taskId => {
+    this.setState({
+      tasks: this.state.tasks.map(task => {
+        if(task.id === taskId){
+          return {
+            ...task,
+            completed: !task.completed
+          }
+        } else {
+          return task
+        }
+      })
+    })
+  }
+
+  clearCompleted = () => {
+    this.setState({
+      tasks: this.state.tasks.filter(task => task.completed === false)
+    })
+  }
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <ToDoForm addTask={this.addTask} />
+        <button className='btn' onClick={this.clearCompleted}>Clear Completed</button>
+        <ToDoList tasks={this.state.tasks} markCompleted={this.markCompleted} />
       </div>
     );
   }
