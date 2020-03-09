@@ -9,18 +9,19 @@ body{
 
 /* GENERAL STYLING */
 .container{
-    width: 50%;
-    margin: 10% auto;
+    width: 70%;
+    /* margin: 10% auto; */
+    margin: auto;
     padding: 5%;
     padding-top: 1%;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.397);
-    background-color: rgba(212, 208, 203, 0.658);
+    /* box-shadow: 10px 15px 15px rgba(128, 128, 128, 0.397); */
+    /* background-color: rgba(212, 208, 203, 0.658); */
 }
 .title{
-    font-size: 3vw;
+    font-size: 4vw;
     color: rgb(23, 36, 36);
-    margin-bottom: 10%;
+    margin-bottom: 3%;
 }
 
 /* FORMS STYLING */
@@ -65,7 +66,7 @@ body{
     color: white;
     border: none;
     border-radius: 5px;
-    width: 8vw; 
+    width: 10vw; 
 }
 
 
@@ -81,6 +82,7 @@ body{
     text-align: left;
     align-content: space-between;
     background-color: moccasin; 
+    box-shadow: 10px 15px 15px rgba(128, 128, 128, 0.397);
 }
 .todo{
     padding: 1%;
