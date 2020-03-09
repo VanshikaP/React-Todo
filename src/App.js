@@ -97,8 +97,8 @@ class App extends React.Component {
     this.setState({
       tasks: this.state.tasks,
       displayTasks: this.state.tasks,
-      searchTerm: this.state.searchTerm,
-      searched: this.state.searched
+      searchTerm: '',
+      searched: false
     })
   }
 
