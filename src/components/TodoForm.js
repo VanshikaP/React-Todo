@@ -15,11 +15,12 @@ const ToDoForm = (props) => {
             id: Date.now(),
             completed: false
         })
+        setToDo('')
     }
     return (
-        <form>
-            <input type='text' name='todo' placeholder='Add ToDo' onChange={handleChange} />
-            <button onClick={handleSubmit}>Add ToDo</button>
+        <form className='add-todo-container'>
+            <input type='text' className='add-todo input' name='todo' value={toDo} placeholder='Add ToDo' onChange={handleChange} />
+            <button className='add-todo btn' onClick={handleSubmit}>Add ToDo</button>
         </form>
     )
 }

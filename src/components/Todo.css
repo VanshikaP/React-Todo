@@ -1,3 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
+body{
+    font-family: 'Courgette', cursive;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2552&q=80');
+}
+
+/* GENERAL STYLING */
+.container{
+    width: 50%;
+    margin: 10% auto;
+    padding: 5%;
+    padding-top: 1%;
+    /* border: 10px double rgb(253, 252, 252); */
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.397);
+    background-color: rgba(212, 208, 203, 0.658);
+}
+.title{
+    font-size: 3vw;
+    color: rgb(23, 36, 36);
+    margin-bottom: 10%;
+}
+
+/* FORMS STYLING */
+.forms{
+    display: flex;
+    justify-content: space-between;
+}
+.input{
+    margin-right: 2%;
+}
+
+/* SEARCH FORM */
+.search-container{
+    display: flex;
+}
+.search.btn{
+    background-color: saddlebrown;
+    color: white;
+    border: none;
+}
+.back{
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+}
+.close{
+    display: none;
+}
+
+/* ADD TODO FORM */
+.add-todo-container{
+    display: flex;
+}
+.add-todo,.search, .btn{
+    font-size: large;
+    font-family: 'Courgette', cursive;
+    border-radius: 5px;
+    padding: 1% 2%;
+}
+.add-todo.btn{
+    background-color: saddlebrown;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+/* TODO LIST */
+
+.todo-container{
+    display: flex;
+    width: 80%;
+    margin: 5% auto;
+    padding: 5% 0% 5% 2%;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    align-content: space-between;
+    background-color: moccasin; 
+}
+.todo{
+    padding: 1%;
+    font-size: large;
+    border-bottom: 1px solid rgba(27, 27, 27, 0.37);
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
+
 .completed{
     text-decoration: line-through;
+    color: darkgray;
+}
+
+/* VIEW BUTTONS */
+.view{
+    background-color: rgb(10, 10, 82);
+    color: white;
+    border: none;
+    margin-right: 5%;
+}
+.clear{
+    background-color: maroon;
 }
