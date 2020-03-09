@@ -148,9 +148,8 @@ class App extends React.Component {
             <button className='search btn' onClick={this.searchTask}>Search</button>
             <button className={`search btn${this.state.searched ? ' back' : 'back close'}`} onClick={this.handleBack}>Back</button>
           </div>
-          <ToDoForm addTask={this.addTask} />
         </div>
-        <ToDoList tasks={this.state.displayTasks} toggleCompleted={this.toggleCompleted} />
+        <ToDoList tasks={this.state.displayTasks} toggleCompleted={this.toggleCompleted} addTask={this.addTask} />
         <div className='view-btn-container'>
           <button className='view clear btn' onClick={this.clearCompleted}>Clear Completed</button>
           <button className='view completed-tasks btn' onClick={this.showCompleted}>Show Completed Tasks</button>
