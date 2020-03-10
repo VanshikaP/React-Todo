@@ -43,8 +43,8 @@ class App extends React.Component {
       searchTerm: this.state.searchTerm,
       searched: this.state.searched
     })
-    window.localStorage.setItem('tasks', JSON.stringify(this.state.tasks))
-    console.log('Local Storage reset - task added', window.localStorage.getItem('tasks'));
+    window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+    console.log('Session Storage reset - task added', window.sessionStorage.getItem('tasks'));
   }
 
   toggleCompleted = taskId => {
@@ -74,8 +74,8 @@ class App extends React.Component {
       searched: this.state.searched
     })
 
-    window.localStorage.setItem('tasks', JSON.stringify(this.state.tasks))
-    console.log('Local Storage reset - status updated', window.localStorage.getItem('tasks'));
+    window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+    console.log('Session Storage reset - status updated', window.sessionStorage.getItem('tasks'));
   }
 
   // VIEW FUNCTIONS
