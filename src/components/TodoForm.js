@@ -10,17 +10,22 @@ const ToDoForm = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.addTask({
-            item: toDo,
-            id: Date.now(),
-            completed: false
-        })
-        setToDo('')
+        if(toDo === ''){
+            alert('Please enter task name to add it to list');
+        } else {
+            props.addTask({
+                item: toDo,
+                id: Date.now(),
+                completed: false
+            })
+            setToDo('')
+        }
+        
     }
     return (
         <form className='add-todo-container'>
-            <input type='text' className='add-todo input' name='todo' value={toDo} placeholder='Add ToDo' onChange={handleChange} />
-            <button className='add-todo btn' onClick={handleSubmit}>Add ToDo</button>
+            <input required type='text' className='add-todo input' name='todo' value={toDo} placeholder='Add ToDo' onChange={handleChange} />
+            <button type='submit' className='add-todo btn' onClick={handleSubmit}>Add ToDo</button>
         </form>
     )
 }

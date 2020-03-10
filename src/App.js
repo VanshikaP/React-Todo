@@ -43,6 +43,8 @@ class App extends React.Component {
       searchTerm: this.state.searchTerm,
       searched: this.state.searched
     })
+    window.localStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+    console.log('Local Storage reset - task added', window.localStorage.getItem('tasks'));
   }
 
   toggleCompleted = taskId => {
@@ -71,6 +73,9 @@ class App extends React.Component {
       searchTerm: this.state.searchTerm,
       searched: this.state.searched
     })
+
+    window.localStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+    console.log('Local Storage reset - status updated', window.localStorage.getItem('tasks'));
   }
 
   // VIEW FUNCTIONS
@@ -137,6 +142,8 @@ class App extends React.Component {
     })
     console.log('Search Cleared')
   }
+
+
 
   render() {
     return (
