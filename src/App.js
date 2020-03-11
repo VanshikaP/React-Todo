@@ -27,8 +27,8 @@ class App extends React.Component {
   constructor(){
     super()
     this.state = {
-      tasks: tasks,
-      displayTasks: tasks,
+      tasks: window.sessionStorage.getItem('tasks') === null ? tasks : JSON.parse(window.sessionStorage.getItem('tasks')),
+      displayTasks: window.sessionStorage.getItem('tasks') === null ? tasks : JSON.parse(window.sessionStorage.getItem('tasks')),
       searchTerm: '',
       searched: false
     }
@@ -42,9 +42,12 @@ class App extends React.Component {
       displayTasks: [...this.state.displayTasks, task],
       searchTerm: this.state.searchTerm,
       searched: this.state.searched
+    }, () => {
+      window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+      console.log('Session Storage reset - task added', window.sessionStorage.getItem('tasks'));
     })
-    window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
-    console.log('Session Storage reset - task added', window.sessionStorage.getItem('tasks'));
+    // window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+    // console.log('Session Storage reset - task added', window.sessionStorage.getItem('tasks'));
   }
 
   toggleCompleted = taskId => {
@@ -72,10 +75,13 @@ class App extends React.Component {
       }),
       searchTerm: this.state.searchTerm,
       searched: this.state.searched
+    }, () => {
+      window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+      console.log('Session Storage reset - status updated', window.sessionStorage.getItem('tasks'));
     })
 
-    window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
-    console.log('Session Storage reset - status updated', window.sessionStorage.getItem('tasks'));
+    // window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+    // console.log('Session Storage reset - status updated', window.sessionStorage.getItem('tasks'));
   }
 
   // VIEW FUNCTIONS
