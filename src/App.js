@@ -27,8 +27,8 @@ class App extends React.Component {
   constructor(){
     super()
     this.state = {
-      tasks: window.sessionStorage.getItem('tasks') === null ? tasks : JSON.parse(window.sessionStorage.getItem('tasks')),
-      displayTasks: window.sessionStorage.getItem('tasks') === null ? tasks : JSON.parse(window.sessionStorage.getItem('tasks')),
+      tasks: window.localStorage.getItem('tasks') === null ? tasks : JSON.parse(window.localStorage.getItem('tasks')),
+      displayTasks: window.localStorage.getItem('tasks') === null ? tasks : JSON.parse(window.localStorage.getItem('tasks')),
       searchTerm: '',
       searched: false
     }
@@ -43,8 +43,10 @@ class App extends React.Component {
       searchTerm: this.state.searchTerm,
       searched: this.state.searched
     }, () => {
-      window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
-      console.log('Session Storage reset - task added', window.sessionStorage.getItem('tasks'));
+      // window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+      // console.log('Session Storage reset - task added', window.sessionStorage.getItem('tasks'));
+      window.localStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+      console.log('Local Storage reset - task added', window.localStorage.getItem('tasks'));
     })
     // window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
     // console.log('Session Storage reset - task added', window.sessionStorage.getItem('tasks'));
@@ -76,8 +78,10 @@ class App extends React.Component {
       searchTerm: this.state.searchTerm,
       searched: this.state.searched
     }, () => {
-      window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
-      console.log('Session Storage reset - status updated', window.sessionStorage.getItem('tasks'));
+      // window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+      // console.log('Session Storage reset - status updated', window.sessionStorage.getItem('tasks'));
+      window.localStorage.setItem('tasks', JSON.stringify(this.state.tasks))
+      console.log('Local Storage reset - status updated', window.localStorage.getItem('tasks'));
     })
 
     // window.sessionStorage.setItem('tasks', JSON.stringify(this.state.tasks))
