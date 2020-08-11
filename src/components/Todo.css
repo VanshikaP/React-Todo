@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
+body{
+    font-family: 'Courgette', cursive;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2552&q=80');
+    background-size: inherit;
+}
+
+/* GENERAL STYLING */
+.container{
+    width: 70%;
+    /* margin: 10% auto; */
+    margin: auto;
+    padding: 5%;
+    padding-top: 1%;
+    border-radius: 10px;
+    /* box-shadow: 10px 15px 15px rgba(128, 128, 128, 0.397); */
+    /* background-color: rgba(212, 208, 203, 0.658); */
+}
+.title{
+    font-size: 4vw;
+    color: rgb(23, 36, 36);
+    margin-bottom: 3%;
+}
+
+/* FORMS STYLING */
+.input{
+    margin-right: 2%;
+}
+
+/* SEARCH FORM */
+.search-container{
+    margin: 5% auto;
+}
+.search.btn{
+    background-color: saddlebrown;
+    color: white;
+    border: none;
+    margin-right: 2%;
+}
+.back{
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+}
+.close{
+    display: none;
+}
+
+/* ADD TODO FORM */
+.add-todo-container{
+    display: flex;
+}
+.add-todo.input{
+    background-color: rgba(255, 255, 255, 0.301);
+    border: none;
+}
+.add-todo, .search, .btn{
+    font-size: 1.2vw;
+    font-family: 'Courgette', cursive;
+    border-radius: 5px;
+    padding: 2% 3%;
+}
+.add-todo.btn{
+    background-color: saddlebrown;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 10vw; 
+}
+
+
+/* TODO LIST */
+
+.todo-container{
+    display: flex;
+    width: 80%;
+    margin: 5% auto;
+    padding: 5% 0% 5% 2%;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    align-content: space-between;
+    /* background-image: url('https://images.unsplash.com/photo-1528458805188-8774877fdb71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1752&q=80');  */
+    background-color: #f0ca9c;
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    box-shadow: 10px 15px 15px rgba(128, 128, 128, 0.397);
+}
+.todo{
+    padding: 1%;
+    font-size: 1.5vw;
+    border-bottom: 1px solid rgba(27, 27, 27, 0.37);
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: darkgray;
+}
+
+/* VIEW BUTTONS */
+.view{
+    background-color: rgb(10, 10, 82);
+    color: white;
+    border: none;
+    margin-right: 5%;
+}
+.clear{
+    background-color: maroon;
+}
+
+@media (max-width: 800px){
+    .title{
+        font-size: 6vw;
+    }
+    .forms{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .forms *{
+        border-radius: 5px;  
+        font-size: 2vw; 
+    }
+    .search-container{
+        margin-bottom: 3%;    
+    }
+    .search.btn{
+        width: 10vw;
+    }
+    .add-todo.btn{
+        width: 13vw;
+    }
+    .todo-container{
+        margin: 10% auto;
+    }
+    .todo{
+        font-size: 2.5vw;
+    }
+    .view-btn-container{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+        /* justify-content: flex-end; */
+        /* align-items: flex-end; */
+    }
+    
+    .view{
+        /* width: 22vw; */
+        font-size: 2vw;
+        margin-bottom: 3%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 500px){
+    .container{
+        width: 80%;
+        margin: 10% auto;
+    }
+    .title{
+        font-size: 10vw;
+    }
+    .search.btn{
+        font-size: 4vw;
+        width: 20vw;
+    }
+    .search.input{
+        font-size: 4vw;
+    }
+    .todo{
+        font-size: 5vw;
+        margin-bottom: 5%; 
+    }
+    .add-todo{
+        font-size: 4vw;
+    }
+    .view{
+        font-size: 4vw;
+        padding: 2% 5%;
+    }
+}
